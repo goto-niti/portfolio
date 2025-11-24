@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Niti Pereira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background-color: #181a24;
+      margin: 8% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 30px #000;
+      text-align: center;
+    }
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: -10px;
+    }
+    .close:hover {
+      color: #9b5bff;
+    }
+  </style>
+</head>
+<body>
+    <div id="galaxy-bg"></div>
+  <div class="bg-effect"></div>
+  <header class="navbar" id="navbar">
+    <div class="logo">Niti Pereira</div>
+    <nav class="nav-links" id="navMenu">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="project.html" class="nav-item active">Projects</a>
+      <a href="achievements.html" class="nav-item">Achievements</a>
+      <a href="contact2.html" class="nav-item">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌓</button>
+      <div class="hamburger" id="hamburger">☰</div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <section class="project-section">
+      <h1 class="section-title">Selected Projects</h1>
+
+      <div class="projects-grid">
+        <!-- Project Card -->
+        <article class="project-card glass-panel">
+          <img src="assets/images/project1.png" alt="Project 1" class="project-thumb" />
+          <div class="project-info">
+            <h3>Elevare</h3>
+            <p>A marketplace that empowers artisans by connecting them with audiences, built using Glide to ensure a smooth and accessible experience.</p>
+            <div class="project-links">
+              <a href="https://go.glideapps.com/app/FMHIFjTHxg2knzwaFdH8/layout" class="neon-btn-outline small">Live</a>
+              <a href="#" class="neon-btn-outline small">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card glass-panel">
+          <img src="assets/images/project2.png" alt="Project 2" class="project-thumb" />
+          <div class="project-info">
+            <h3>College Website Developing</h3>
+            <p>Applying HTML skills to create an HTML skeleton of a college website.</p>
+            <div class="project-links">
+              <a href="#" class="neon-btn-outline small">Live</a>
+              <a href="#" class="neon-btn-outline small" onclick="showCodeModal('code-img-2'); return false;">Code</a>
+            </div>
+            <img id="code-img-2" src="assets/images/project2-code.png" alt="Project 2 Code Screenshot" style="display:none;" />
+          </div>
+        </article>
+
+        <!-- Add more cards as needed -->
+        <article class="project-card glass-panel placeholder">
+          <img src="assets/images/coming-soon.jpg" alt="Coming soon" class="project-thumb" />
+          <div class="project-info">
+            <h3>More Coming</h3>
+            <p>More projects coming soon — stay tuned.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+  <div id="codeModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCodeModal()">&times;</span>
+      <img id="modalImg" src="" alt="Code Screenshot" />
+    </div>
+  </div>
+  <script>
+    function showCodeModal(imgId) {
+      var modal = document.getElementById('codeModal');
+      var modalImg = document.getElementById('modalImg');
+      var codeImg = document.getElementById(imgId);
+      modal.style.display = 'block';
+      modalImg.src = codeImg.src;
+      modalImg.alt = codeImg.alt;
+    }
+    function closeCodeModal() {
+      document.getElementById('codeModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      var modal = document.getElementById('codeModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+  <footer>
+    &copy; 2025 Niti Pereira. All rights reserved.
+  </footer>
+</body>
+</html>
